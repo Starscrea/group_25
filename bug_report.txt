@@ -1,0 +1,6 @@
+ID: 1
+Title: "Отсутствует изображение на главной странице",
+Steps to reproduce: Зайти на страницу http://artstamp.ru/?page=start,
+Actual_Result: Отсутствует изображение
+Expected_Result: Присутствует изображение
+Environment: Chrome/96.0.4664.110
