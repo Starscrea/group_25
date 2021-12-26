@@ -1,6 +1,6 @@
 ID: 1
 Title: "Отсутствует_изображение_на_главной_странице",
-Steps to reproduce: Зайти_на_страницу_http://artstamp.ru/?page=start,
+Steps_to_reproduce: Зайти_на_страницу_http://artstamp.ru/?page=start,
 Actual_Result: Отсутствует_изображение
 Expected_Result: Присутствует_изображение
 Environment: Chrome/96.0.4664.110
