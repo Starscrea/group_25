@@ -11,15 +11,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://162.55.220.72:5005/",
-					"protocol": "http",
+					"raw": "{{url}}/",
 					"host": [
-						"162",
-						"55",
-						"220",
-						"72"
+						"{{url}}"
 					],
-					"port": "5005",
 					"path": [
 						""
 					]
@@ -33,15 +28,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://162.55.220.72:5005/first",
-					"protocol": "http",
+					"raw": "{{url}}/first",
 					"host": [
-						"162",
-						"55",
-						"220",
-						"72"
+						"{{url}}"
 					],
-					"port": "5005",
 					"path": [
 						"first"
 					]
@@ -75,15 +65,10 @@
 					]
 				},
 				"url": {
-					"raw": "http://162.55.220.72:5005/user_info_2",
-					"protocol": "http",
+					"raw": "{{url}}/user_info_2",
 					"host": [
-						"162",
-						"55",
-						"220",
-						"72"
+						"{{url}}"
 					],
-					"port": "5005",
 					"path": [
 						"user_info_2"
 					]
@@ -92,16 +77,7 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
-			},
-			"response": []
-		},
-		{
-			"name": "EP_1",
+			"name": "get_method",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -133,7 +109,7 @@
 			"response": []
 		},
 		{
-			"name": "EP_2",
+			"name": "user_info_3",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -175,7 +151,7 @@
 			"response": []
 		},
 		{
-			"name": "EP_3",
+			"name": "object_info_1",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -211,7 +187,7 @@
 			"response": []
 		},
 		{
-			"name": "EP_4",
+			"name": "object_info_2",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -247,7 +223,7 @@
 			"response": []
 		},
 		{
-			"name": "EP_5",
+			"name": "object_info_3",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -283,7 +259,7 @@
 			"response": []
 		},
 		{
-			"name": "EP_6",
+			"name": "object_info_4",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -319,7 +295,7 @@
 			"response": []
 		},
 		{
-			"name": "EP_7",
+			"name": "user_info_2",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -359,6 +335,153 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"var resp_token = jsonData.token;\r",
+							"console.log(\"TOKEN = \" + resp_token)\r",
+							"\r",
+							"pm.environment.set(\"token\", resp_token);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "login",
+							"value": "Andrey",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "32167",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_test_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"var age = +jsonData.age;\r",
+							"var agee = parseInt(jsonData.age) \r",
+							"\r",
+							"\r",
+							"  console.log(\"jsonData.age = \" + jsonData.age + ' ' + typeof(jsonData.age))\r",
+							"  console.log(\"int age = \" + age + ' ' + typeof(age))\r",
+							"  console.log(\"int agee = \" + agee + ' '  + typeof(agee))    \r",
+							"  pm.test(\"Your test age > 29\", function () {\r",
+							"        pm.expect(age).to.be.above(29);  \r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "age",
+							"value": "34",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "1000",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Andrey",
+							"type": "text"
+						},
+						{
+							"key": "auth_token",
+							"value": "{{token}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/get_test_user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"get_test_user"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", () => {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
 		}
 	]
 }
