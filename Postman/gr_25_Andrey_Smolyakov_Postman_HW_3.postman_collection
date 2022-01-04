@@ -191,12 +191,12 @@
 							"\tpm.expect(salary_3).to.eql(request.salary*3);\r",
 							"});\r",
 							"//4) проверить, что 2-й элемент массива salary больше 1-го и 0-го\r",
-							"    pm.test(\"2-й_элемент_массива_salary_больше_0-го\", () => {\r",
-							"\tpm.expect(salary_3).to.be.above(salary);\r",
+							"    pm.test(\"2-й_элемент_массива_salary_больше_1-го_и_0-го\", () => {\r",
+							"\tpm.expect(salary_3).to.be.above(salary, salary_2);\r",
 							"});\r",
-							"\tpm.test(\"2-й_элемент_массива_salary_больше_1-го\", () => {\r",
-							"\tpm.expect(salary_3).to.be.above(salary_2);\r",
-							"});"
+							"//\tpm.test(\"2-й_элемент_массива_salary_больше_1-го\", () => {\r",
+							"//\tpm.expect(salary_3).to.be.above(salary_2);\r",
+							"//});"
 						],
 						"type": "text/javascript"
 					}
