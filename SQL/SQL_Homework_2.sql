@@ -1,4 +1,4 @@
---1)¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ employees
+--1)Ğ¡Ğ¾Ğ·Ğ´Ğ°Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ employees
 -- id. serial,  primary key,
 -- employee_name. Varchar(50), not null
 
@@ -8,7 +8,7 @@ employee_name varchar(50) not null
 );
 select * from employees;
 
---2)¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ employees 70 ¿¿¿¿¿¿¿¿
+--2)ĞĞ°Ğ¿Ğ¾Ğ»Ğ½Ğ¸Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ employee 70 ÑÑ‚Ñ€Ğ¾ĞºĞ°Ğ¼Ğ¸.
 insert into employees(employee_name)
 	values  ('Coe Brandon'),
 			('Petrov Matvey'),
@@ -81,7 +81,7 @@ insert into employees(employee_name)
 			('McConnell-Barker Bryce'),
 			('Pitre Coulson');
 			
---3)¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ salary
+--3)Ğ¡Ğ¾Ğ·Ğ´Ğ°Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ salary
 -- id. Serial  primary key,
 -- monthly_salary. Int, not null
 create table salary(
@@ -90,7 +90,7 @@ monthly_salary int not null
 );
 select * from salary;
 
---4)¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ salary 15 ¿¿¿¿¿¿¿¿:
+--4)ĞĞ°Ğ¿Ğ¾Ğ»Ğ½Ğ¸Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ salary 15 ÑÑ‚Ñ€Ğ¾ĞºĞ°Ğ¼Ğ¸:
 insert into salary(monthly_salary)
 values (1000),
 		(1100),
@@ -109,7 +109,7 @@ values (1000),
 		(2400),
 		(2500);
 	
---5) ¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ employee_salary
+--5) Ğ¡Ğ¾Ğ·Ğ´Ğ°Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ employee_salary
 -- id. Serial  primary key,
 -- employee_id. Int, not null, unique
 -- salary_id. Int, not null
@@ -120,8 +120,8 @@ values (1000),
 	);
 select * from employee_salary;
 
---6)¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ employee_salary 40 ¿¿¿¿¿¿¿¿:
--- ¿ 10 ¿¿¿¿¿ ¿¿ 40 ¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿¿¿¿¿¿¿ employee_id
+--6)ĞĞ°Ğ¿Ğ¾Ğ»Ğ½Ğ¸Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ employee_salary 40 ÑÑ‚Ñ€Ğ¾ĞºĞ°Ğ¼Ğ¸:
+-- Ğ² 10 ÑÑ‚Ñ€Ğ¾Ğº Ğ¸Ğ· 40 Ğ²ÑÑ‚Ğ°Ğ²Ğ¸Ñ‚ÑŒ Ğ½ĞµÑÑƒÑ‰ĞµÑÑ‚Ğ²ÑƒÑÑ‰Ğ¸Ğµ employee_id
 insert into employee_salary(employee_id, salary_id)
 values  (3, 7),
 		(1, 4),
@@ -163,7 +163,7 @@ values  (3, 7),
 		(78, 14),
 		(79, 16),
 		(80, 12);
---7) ¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿ roles
+--7) Ğ¡Ğ¾Ğ·Ğ´Ğ°Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ roles
 -- id. Serial  primary key,
 -- role_name. int, not null, unique
 	create table roles(
@@ -171,10 +171,10 @@ values  (3, 7),
 	role_name int not null unique
 	);
 	select * from roles;
---8)¿¿¿¿¿¿¿¿ ¿¿¿ ¿¿¿¿¿¿ role_name ¿ int ¿¿ varchar(30)
+--8)ĞŸĞ¾Ğ¼ĞµĞ½ÑÑ‚ÑŒ Ñ‚Ğ¸Ğ¿ ÑÑ‚Ğ¾Ğ»Ğ±Ğ° role_name Ñ int Ğ½Ğ° varchar(30)
 	alter table roles 
 	alter column role_name type varchar(30);	
---9)¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ roles 20 ¿¿¿¿¿¿¿¿:
+--9)ĞĞ°Ğ¿Ğ¾Ğ»Ğ½Ğ¸Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ roles 20 ÑÑ‚Ñ€Ğ¾ĞºĞ°Ğ¼Ğ¸:
 insert into roles(id, role_name)
 values  (1, 'Junior Python developer'),
 		(2, 'Middle Python developer'),
@@ -197,10 +197,11 @@ values  (1, 'Junior Python developer'),
 		(19, 'Middle Automation QA engineer'),
 		(20, 'Senior Automation QA engineer');
 	
---10)¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ roles_employee
--- id. Serial  primary key,
--- employee_id. Int, not null, unique (¿¿¿¿¿¿¿ ¿¿¿¿ ¿¿¿ ¿¿¿¿¿¿¿ employees, ¿¿¿¿ id)
--- role_id. Int, not null (¿¿¿¿¿¿¿ ¿¿¿¿ ¿¿¿ ¿¿¿¿¿¿¿ roles, ¿¿¿¿ id)
+--10)Ğ¡Ğ¾Ğ·Ğ´Ğ°Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ roles_employee
+-- - id. Serial  primary key,
+-- employee_id. Int, not null, unique (Ğ²Ğ½ĞµÑˆĞ½Ğ¸Ğ¹ ĞºĞ»ÑÑ‡ Ğ´Ğ»Ñ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñ‹ employees, Ğ¿Ğ¾Ğ»Ğµ id)
+-- role_id. Int, not null (Ğ²Ğ½ĞµÑˆĞ½Ğ¸Ğ¹ ĞºĞ»ÑÑ‡ Ğ´Ğ»Ñ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñ‹ roles, Ğ¿Ğ¾Ğ»Ğµ id)
+
 create table roles_employee(
 id serial primary key,
 employee_id int not null unique,
@@ -211,7 +212,7 @@ foreign key (role_id)
 		references roles(id)
 		);
 select * from roles_employee;
---11)¿¿¿¿¿¿¿¿¿ ¿¿¿¿¿¿¿ roles_employee 40 ¿¿¿¿¿¿¿¿:
+--11)ĞĞ°Ğ¿Ğ¾Ğ»Ğ½Ğ¸Ñ‚ÑŒ Ñ‚Ğ°Ğ±Ğ»Ğ¸Ñ†Ñƒ roles_employee 40 ÑÑ‚Ñ€Ğ¾ĞºĞ°Ğ¼Ğ¸:
 
 insert into roles_employee (employee_id,role_id)
 values  (68, 2),
