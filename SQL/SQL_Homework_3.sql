@@ -160,11 +160,12 @@
 	
 	select avg(monthly_salary) as avg_salary_Junior
 	from roles_employee
-	join salary on salary.id = salary.id
 	join roles on roles.id = roles_employee.role_id
 	join employees on employees.id = roles_employee.employee_id
 	join employee_salary on employee_salary.employee_id = roles_employee.employee_id
+	join salary on salary_id = salary.id
 	where role_name like '%Junior%';
+
 
  --22. Вывести сумму зарплат JS разработчиков  
 
